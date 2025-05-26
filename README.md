@@ -1,9 +1,12 @@
-<<<<<<< HEAD
+# Game-Template
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+---
 
-First, run the development server:
+## 🚀 Getting Started
+
+Run the development server:
 
 ```bash
 npm run dev
@@ -13,28 +16,93 @@ yarn dev
 pnpm dev
 # or
 bun dev
-```
+Then open http://localhost:3000 in your browser.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+You can start editing the page by modifying app/page.tsx. The page auto-updates as you edit the file.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+This project uses next/font to automatically optimize and load Geist, a modern font family by Vercel.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+🏆 Leaderboard Feature
+This app includes a dynamic leaderboard that displays top player scores across:
 
-## Learn More
+daily: scores from today
 
-To learn more about Next.js, take a look at the following resources:
+weekly: scores from the last 7 days
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+alltime: highest scores ever
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+stats: (coming soon) user-specific statistics
 
-## Deploy on Vercel
+📄 LeaderboardView.tsx
+This React component renders the leaderboard view dynamically based on the mode passed:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+tsx
+Copy
+Edit
+<LeaderboardView mode="daily" />
+Key features:
+Fetches top scores using fetchWinners() from useLeaderboard.ts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-=======
-# Game-Template
->>>>>>> 25e132adc7b998562a8eabe957347c5ccd1d812a
+Uses useEffect to trigger fetching on mode change
+
+Displays rank, username, score, turns, and time
+
+📡 useLeaderboard.ts
+This module handles fetching leaderboard data from Supabase.
+
+ts
+Copy
+Edit
+supabase
+  .from('scores')
+  .select('*')
+  .gte('created_at', fromDate) // filters if needed
+  .order('score', { ascending: false })
+  .limit(10);
+daily: filters from start of today
+
+weekly: filters from last 7 days
+
+alltime: no filter
+
+Returns an array of winner objects or empty array on error.
+
+🔢 Turns Counter
+📄 TurnsCounter.tsx
+A live component that displays and updates the number of turns taken for a specific game (like Wordle, Sudoku, etc.).
+
+✅ Example:
+tsx
+Copy
+Edit
+<TurnsCounter game="wordle" />
+🔍 Features:
+Retrieves current turn count from localStorage using a key like wordle_turns
+
+Updates every 500ms using setInterval
+
+Cleans up the interval on unmount
+
+📦 Non-JSX Usage (e.g. HTML injection or framework adapters)
+If you can’t use JSX, you can still use the component in React-compatible frameworks like so:
+
+ts
+Copy
+Edit
+import { createElement } from 'react';
+import TurnsCounter from '@/components/TurnsCounter';
+
+const node = createElement(TurnsCounter, { game: 'wordle' });
+// Then render `node` into a container using your render engine
+Make sure you also have logic in your app setting the value in localStorage using your own turn logic:
+
+ts
+Copy
+Edit
+localStorage.setItem('wordle_turns', '3');
+Or via your utility:
+
+ts
+Copy
+Edit
+setStoredInt('wordle_turns', 3);
