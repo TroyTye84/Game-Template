@@ -1,0 +1,121 @@
+.winContainer {
+    background: #fefefe;
+    border-radius: 20px;
+    max-width: 90vw;
+    text-align: center;
+    font-family: 'Inter', sans-serif;
+    color: #333;
+    position: relative;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    padding: 0.5rem 1rem;
+  }
+  
+  .spacer {
+    width: 1.4rem; /* same width as the close button */
+  }
+  
+  .header h2 {
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: 600;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  .closeButton {
+    background: none;
+    border: none;
+    font-size: 1.4rem;
+    color: #f44336;
+    cursor: pointer;
+  }
+  
+  .word {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #28a745;
+    margin: 8px 0 4px;
+  }
+  
+  .definition {
+    font-size: 0.9rem;
+    color: #777;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+  
+  .statsRow {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+  
+  .statsRow .label {
+    font-size: 0.75rem;
+    color: #777;
+  }
+  
+  .statsRow .value {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-top: 4px;
+  }
+  
+  .nextWordTimer {
+    font-size: 0.85rem;
+    margin-bottom: 12px;
+    color: #444;
+  }
+  
+  .timer {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-top: 4px;
+  }
+  
+  .notifyCheckbox {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    font-size: 0.85rem;
+    margin: 10px 0 16px;
+  }
+  
+  .nameInput {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 0.9rem;
+  }
+  
+  .saveButton,
+  .shareButton {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    margin-bottom: 10px;
+  }
+  
+  .saveButton {
+    background: #4a5cfb;
+    color: white;
+  }
+  
+  .shareButton {
+    background: #4a5cfb;
+    color: white;
+  }
+  

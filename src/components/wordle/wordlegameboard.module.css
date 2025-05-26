@@ -1,0 +1,78 @@
+.boardWrapper {
+    height: 100%;
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  }
+  
+  .board {
+    display: flex;
+    
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 8px; /* Add vertical gap between rows */
+    height: 95%; /* Slightly reduce to accommodate gaps */
+    width: auto;
+    max-width: 350px;
+
+  }
+  
+  /* Row styling */
+  .row {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    
+  }
+  
+  .tile {
+    width: var(--tile-size, 50px);
+    aspect-ratio: 1 / 1;              /* Enforces square shape */
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: min(1.5rem, 5vw);
+    font-weight: bold;
+    text-transform: uppercase;
+    border-radius: 15px;
+    transition: transform 0.1s ease;
+  }
+  /* Animation for active tile */
+  .tileActive {
+    animation: tileGrow 0.15s ease;
+  }
+  
+  @keyframes tileGrow {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .cell-correct {
+    background-color: #3cb982;
+    border-color: #3cb982;
+    color: white;
+  }
+  
+  .cell-present {
+    background-color: #f2ae1d !important;
+    border-color: #f2ae1d !important;
+    color: white;
+  }
+  
+  .cell-absent {
+    background-color: #4a4f54 !important;
+    border-color: #4a4f54 !important;
+    color: white;
+  }

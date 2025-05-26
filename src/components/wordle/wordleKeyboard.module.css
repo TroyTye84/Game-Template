@@ -1,0 +1,88 @@
+.keyboardContainer {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 600px;
+    padding: 10px 10px 0;
+    box-sizing: border-box;
+    z-index: 10; /* Above board but below header */
+    background-color: #f4f4f4; /* Match body background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .keyboardRow {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+    margin-bottom: 8px;
+    
+  }
+  
+  .keyButton {
+    background-color: #fff;
+    border-radius: 10px;
+    border: none;
+    font-size: 16px;
+    font-weight: 400;
+    cursor: pointer;
+    text-align: center;
+    line-height: 40px;
+    flex: 1;
+    margin: 0 2px;
+    height: 100%;
+    transition: background-color 0.2s ease;
+  }
+  
+  /* Themed states */
+  .correct {
+    background-color: #3cb982 !important;
+    color: white !important;
+  }
+  
+  .present {
+    background-color: #f2ae1d !important;
+    color: white !important;
+  }
+  
+  .absent {
+    background-color: #4a4f54 !important;
+    color: white !important;
+  }
+  
+  /* Backspace key */
+  .deleteKey {
+    font-size: 12px !important;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .correct {
+    background-color: #3cb982 !important;
+    color: white !important;
+  }
+  
+  .present {
+    background-color: #f2ae1d !important;
+    color: white !important;
+  }
+  
+  .absent {
+    background-color: #4a4f54 !important;
+    color: white !important;
+  }
+  .submitButton {
+    width: 150px;
+    height: 40px;
+    border-radius: 15px;
+    border: none;
+    background-color: #4a5cfb;
+    color: #fff;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: center;
+  }
+  

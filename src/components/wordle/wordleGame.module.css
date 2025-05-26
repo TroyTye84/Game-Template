@@ -1,0 +1,115 @@
+/* Base styles for the entire page */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    overflow: hidden;
+  }
+  
+  /* Main page container */
+  .pageContainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+    background-color: #f4f4f4;
+  }
+  
+  /* Fixed header at top */
+  .header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 20;
+    background-color: #f4f4f4;
+  }
+  
+  /* Left and right elements within header */
+  .left,
+  .right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .left {
+    left: 1rem;
+  }
+  
+  .right {
+    right: 1rem;
+    width: 32px;
+    height: 32px;
+  }
+  
+  /* Logo styling */
+  .logoContainer {
+    display: block;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    width: 130px;
+    padding-top: 8px;
+  }
+  
+  #wordle-logo {
+    width: auto;
+    display: block;
+  }
+  
+  /* Points section styling */
+  #points-section {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  #points-icon-container {
+    width: 100%;
+    height: 100%;
+  }
+  
+  #points-icon {
+    width: 100%;
+    height: 100%;
+    display: block;
+    height: 32px;
+  }
+  
+  /* Main content area for vertical centering */
+  .mainContent {
+    position: absolute;
+    top: 0px; /* Space for header */
+    bottom: 260px; /* Space for keyboard */
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+  
+ 
+  /* Container for other UI elements */
+  .container {
+    height: 100vh;
+    overflow: hidden;
+    padding-top: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    visibility: hidden; /* Hide this while keeping structure */
+    position: absolute;
+    left: -9999px;
+  }
