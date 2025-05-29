@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import styles from './wordleWinOverlay.module.css';
-import { supabase } from '@/lib/supabase'; // Adjust the import if needed
+import { supabase } from '@/lib/supabase';
 
 interface WordleWinOverlayProps {
   word: string;

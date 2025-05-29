@@ -4,7 +4,11 @@
   --background: #ffffff;
   --foreground: #171717;
 }
-
+html, body {
+  margin: 0;
+  height: 100%;
+  background: white;
+}
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);

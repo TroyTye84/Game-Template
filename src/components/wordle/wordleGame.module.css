@@ -1,12 +1,4 @@
 /* Base styles for the entire page */
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    overflow: hidden;
-  }
-  
   /* Main page container */
   .pageContainer {
     display: flex;
